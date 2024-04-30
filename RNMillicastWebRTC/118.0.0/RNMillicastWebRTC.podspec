@@ -5,7 +5,11 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/millicast/libwebrtc-react-native"
   s.license          = { :type => "MIT", :text => "MIT License" }
   s.author           = { "Aravind Raveendran" => "aravind.raveendran@dolby.com" }
-  s.source           = { :http => 'https://github.com/millicast/libwebrtc-react-native/releases/download/118.0.0/WebRTC.xcframework.zip' }
+  s.source           = {
+                          :http => 'https://api.github.com/repos/millicast/libwebrtc-react-native/releases/assets/164843609',
+                          type: :zip,
+                          :headers => ["Authorization: Bearer #{ ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] }", "Accept: application/octet-stream"]
+                       }
   s.ios.deployment_target   = "12.4"
   s.vendored_frameworks     = [ 'WebRTC.xcframework' ]
 end
