@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
                           type: :zip,
                           :headers => ["Authorization: Bearer #{ ENV['GITHUB_PERSONAL_ACCESS_TOKEN'] }", "Accept: application/octet-stream"]
                        }
-  s.ios.deployment_target   = "12.4"
+  s.platforms           = { :ios => '14.0', :tvos => '14.0' }
   s.vendored_frameworks     = [ 'WebRTC.xcframework' ]
 end
